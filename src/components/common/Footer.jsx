@@ -1,31 +1,50 @@
-import React from 'react';
-import { TbBrandMeta } from 'react-icons/tb';
-import { FaInstagram, FaTwitter, FaPinterest } from 'react-icons/fa';
+import React, { useState } from "react";
+import { TbBrandMeta } from "react-icons/tb";
+import { FaInstagram, FaTwitter, FaPinterest } from "react-icons/fa";
+import { toast, Toaster } from "sonner";
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    if (!email) {
+      toast.error("Please enter your email!");
+      return;
+    }
+    toast.success("Subscribed successfully!");
+    setEmail("");
+  };
+
   return (
-    <footer className="border-t bg-gray-50 p-12">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-4 lg:px-0">
-        
+    <footer className="border-t bg-gray-50 p-8 md:p-12">
+      <Toaster />
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+
         {/* Newsletter */}
         <div>
           <h3 className="text-lg text-gray-800 font-semibold mb-4">Newsletter</h3>
           <p className="text-gray-500 mb-2">
-            Be the first to hear about new products, exclusive events, and online offers.
+            Be the first to hear about new products, exclusive events, and offers.
           </p>
           <p className="text-gray-500 mb-4">
             Sign up and get 10% off your first purchase.
           </p>
-          <form className="mt-2 flex">
+          <form 
+            className="flex flex-col sm:flex-row gap-2 sm:gap-0"
+            onSubmit={handleSubscribe}
+          >
             <input 
               type="email" 
               placeholder="Enter your email" 
-              className="flex-1 p-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-1 focus:ring-black"
+              className="flex-1 p-2 border border-gray-300 rounded-md sm:rounded-r-none focus:outline-none focus:ring-1 focus:ring-black"
               required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <button 
               type="submit" 
-              className="bg-black text-white p-2 rounded-r-md hover:bg-gray-800 transition"
+              className="bg-black text-white p-2 rounded-md sm:rounded-l-none hover:bg-gray-800 transition"
             >
               Subscribe
             </button>
@@ -56,7 +75,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Follow Us / Social Media */}
+        {/* Follow Us */}
         <div>
           <h3 className="text-lg text-gray-800 font-semibold mb-4">Follow Us</h3>
           <p className="text-gray-500 mb-4">Stay connected with us on social media</p>

@@ -82,7 +82,7 @@ const Productdetails = () => {
     <div className="p-6">
       <Toaster /> 
 
-      <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row">
+      <div className="max-w-6xl mx-auto  rounded-sm p-6 flex flex-col md:flex-row">
         {/* ---------- LEFT SECTION: IMAGES ---------- */}
         <div className="flex flex-col-reverse md:flex-row gap-6 md:w-1/2">
           {/* Thumbnails */}
