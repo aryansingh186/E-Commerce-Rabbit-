@@ -12,6 +12,7 @@ const UserLayout = () => {
       {/* Main content rendered by child routes */}
       <main>
         <Outlet />
+        
       </main>
 
       {/* Footer */}

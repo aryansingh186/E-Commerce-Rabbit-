@@ -3,6 +3,8 @@ import GenderCollectionSection from '../components/products/GenderCollectionSect
 import NewArrivalProducts from '../components/products/NewArrivalProducts';
 import Productdetails from '../components/products/Productdetails';
 import ProductGrid from '../components/products/ProductGrid';
+import Featuredcollections from '../components/products/Featuredcollections';
+import FeaturesSection from '../components/products/FeaturesSection';
 
 const Home = () => {
 
@@ -19,7 +21,7 @@ const Home = () => {
 
   return (
     <div className="bg-gray-50">
-      <Hero />
+      <Hero /> 
 
       <section className="mt-12">
         <GenderCollectionSection />
@@ -29,18 +31,26 @@ const Home = () => {
         <NewArrivalProducts />
       </section>
 
-      <section className="mt-16 px-4 md:px-8">
-        <h1 className="text-3xl md:text-4xl text-center text-gray-900 font-bold mb-8">
+      <section className=" px-4 md:px-8">
+        <h1 className="text-3xl md:text-4xl text-center text-gray-900 font-bold mb-1">
           Best Sellers
         </h1>
         <Productdetails />
       </section>
 
-      <section className="mt-16 px-4 md:px-8">
+      <section className="mt-4 px-4 md:px-8">
         <h2 className="text-3xl md:text-4xl text-center text-gray-900 font-bold mb-8">
           Top Wears for Women
         </h2>
         <ProductGrid products={placeholderProducts} />
+      </section>
+      {/* Featured Collection */}
+      <section>
+        <Featuredcollections/>
+      </section>
+     {/* Features Section */}
+      <section>
+        <FeaturesSection/>
       </section>
     </div>
   );

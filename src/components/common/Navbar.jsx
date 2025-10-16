@@ -8,6 +8,8 @@ import {
 } from 'react-icons/hi2';
 import Searchbar from './Searchbar';
 import CartDrawer from '../layout/CartDrawer';
+import CollectionPage from '../../pages/CollectionPage';
+
 
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -33,7 +35,7 @@ const Navbar = () => {
 
         {/* Center: Navigation Links */}
         <div className="hidden md:flex space-x-6">
-          <Link to="/" className="hover:text-black text-gray-700 text-sm font-medium uppercase">Men</Link>
+          <Link to="collections/:collection" className="hover:text-black text-gray-700 text-sm font-medium uppercase">Men</Link>
           <Link to="/" className="hover:text-black text-gray-700 text-sm font-medium uppercase">Women</Link>
           <Link to="/" className="hover:text-black text-gray-700 text-sm font-medium uppercase">Top wear</Link>
           <Link to="/" className="hover:text-black text-gray-700 text-sm font-medium uppercase">Bottom wear</Link>
